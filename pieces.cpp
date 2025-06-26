@@ -260,14 +260,14 @@ int piecesInitialPosition[7][4][2] =
 }
 };
 
-int Pieces::GetBlockType(int piece, int rotation, int x, int y) {
+int Pieces::getBlockType(int piece, int rotation, int x, int y) {
   return pieces[piece][rotation][x][y];
 }
 
-int Pieces::GetXInitialPosition(int piece, int rotation) {
+int Pieces::getXInitialPosition(int piece, int rotation) {
   return piecesInitialPosition[piece][rotation][0];
 }
 
-int Pieces::GetYInitialPosition(int piece, int rotation) {
+int Pieces::getYInitialPosition(int piece, int rotation) {
   return piecesInitialPosition[piece][rotation][1];
 }

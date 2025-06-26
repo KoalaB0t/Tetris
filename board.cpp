@@ -16,12 +16,12 @@ bool Board::isPossibleMovement(int x, int y, int piece, int rotation) {
   for (int i1 = x, i2 = 0; i1 < x + PIECE_BLOCKS; i1++, i2++) {
     for (int j1 = y, j2 = 0; j1 < y + PIECE_BLOCKS; j1++, j2++) {
       if (i1 < 0 || i1 > BOARD_HEIGHT - 1 || j1 > BOARD_HEIGHT - 1) {
-        if (0 != pieces->GetBlockType(piece, rotation, j2, i2))
+        if (0 != pieces->getBlockType(piece, rotation, j2, i2))
           return false;
       }
 
       if (j1 >= 0) {
-        if (0 != pieces->GetBlockType(piece, rotation, j2, i2) && !isFreeBlock(i1, j1)) {
+        if (0 != pieces->getBlockType(piece, rotation, j2, i2) && !isFreeBlock(i1, j1)) {
           return false;
         }
       }
@@ -34,7 +34,7 @@ bool Board::isPossibleMovement(int x, int y, int piece, int rotation) {
 void Board::storePiece(int x, int y, int piece, int rotation) {
   for (int i1 = x, i2 = 0; i1 < x + PIECE_BLOCKS; i1++, i2++) {
     for (int j1 = y, j2 = 2; j1 < y + PIECE_BLOCKS; j1++, j2++) {
-      if (0 != pieces->GetBlockType(piece, rotation, i2, j2)) {
+      if (0 != pieces->getBlockType(piece, rotation, i2, j2)) {
         board[i1][j1] = POS_FILLED;
       }
     }
